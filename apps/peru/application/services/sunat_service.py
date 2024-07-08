@@ -29,9 +29,8 @@ class SunatService(SunatServiceInterface):
                 chrome_options.add_argument('--headless')
                 chrome_options.add_argument('--disable-gpu')
                 
-                # chrome_service = Service(sunat_model.chrome_driver_path)
-                # driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
-                driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver",options=chrome_options)
+                chrome_service = Service(sunat_model.chrome_driver_path)
+                driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
             elif sunat_model.driver == 'Firefox':
                 driver = webdriver.Firefox(
                     executable_path="/usr/bin/geckodriver"
