@@ -7,6 +7,7 @@ from core.util.path.path_helper import PathHelper
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 import os
 from datetime import datetime
 
@@ -30,7 +31,9 @@ class SunatService(SunatServiceInterface):
                 chrome_options.add_argument('--disable-gpu')
                 
                 chrome_service = Service(sunat_model.chrome_driver_path)
-                driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
+                # driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
+                driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
             elif sunat_model.driver == 'Firefox':
                 driver = webdriver.Firefox(
                     executable_path="/usr/bin/geckodriver"
