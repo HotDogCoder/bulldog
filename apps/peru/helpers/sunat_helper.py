@@ -101,6 +101,7 @@ class SunatHelper:
         # divOpcionServicio2
         option_btn = Wait(self.driver, timeout=30).until(
                     ec.element_to_be_clickable((By.ID, "divOpcionServicio2")))
+        # option_btn = self.driver.find_element(By.ID, "divOpcionServicio2")
         option_btn.click()
 
         sleep(1)
