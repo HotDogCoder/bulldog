@@ -32,7 +32,7 @@ class SunatService(SunatServiceInterface):
                 
                 chrome_service = Service(sunat_model.chrome_driver_path)
                 # driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
-                driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+                driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
             elif sunat_model.driver == 'Firefox':
                 driver = webdriver.Firefox(
