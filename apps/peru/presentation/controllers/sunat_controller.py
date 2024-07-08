@@ -13,5 +13,5 @@ class SunatController:
         sunat_model.driver = 'Chrome'
         sunat_model.chrome_driver_path = '/Users/Shared/chromedriver/chromedriver'
         sunat_model.chrome_driver_path = "/var/lib/jenkins/.cache/selenium/chromedriver/linux64/114.0.5735.90/chromedriver"
-        sunat_model.chrome_driver_path = "/snap/chromium/2890/usr/lib/chromium-browser/chromedriver"
+        sunat_model.chrome_driver_path = "/usr/lib/chromium-browser/chromedriver"
         return self.sunat_service.get_token(sunat_model)
