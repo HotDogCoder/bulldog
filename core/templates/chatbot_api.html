@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot API</title>
+    <link rel="stylesheet" to="https://cdn.tailwindcss.com/css/tailwind.min.css">
+</head>
+<body class="bg-gray-200">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-4">Chatbot API</h1>
+        <p class="text-gray-700 text-lg mb-8">Welcome to the chatbot API documentation. Here you will find all the information you need to interact with our chatbot using HTTP requests.</p>
+
+        <h2 class="text-2xl font-bold mb-4">Getting started</h2>
+        <p class="text-gray-700 text-lg mb-8">To use the chatbot API, you need to send HTTP requests to the following endpoint:</p>
+        <code class="bg-gray-100 rounded-lg px-4 py-2 mb-8 block"><span class="text-green-500">POST</span> https://example.com/api/chatbot</code>
+
+        <h2 class="text-2xl font-bold mb-4">Authentication</h2>
+        <p class="text-gray-700 text-lg mb-8">To access the chatbot API, you need to include an API key in your HTTP requests. You can obtain an API key by contacting our support team.</p>
+
+        <h2 class="text-2xl font-bold mb-4">Sending messages</h2>
+        <p class="text-gray-700 text-lg mb-4">To send a message to the chatbot, send a JSON payload in the following format:</p>
+        <pre class="bg-gray-100 rounded-lg px-4 py-2 mb-8 block"><code class="text-gray-800">{
+    "message": "Hello, chatbot!",
+    "user_id": "1234",
+    "api_key": "your_api_key"
+}</code></pre>
+        <p class="text-gray-700 text-lg mb-8">The API will return a JSON response in the following format:</p>
+        <pre class="bg-gray-100 rounded-lg px-4 py-2 mb-8 block"><code class="text-gray-800">{
+    "response": "Hi there, how can I assist you?",
+    "bot_id": "5678",
+    "timestamp": "2023-03-10T16:32:12Z"
+}</code></pre>
+
+        <h2 class="text-2xl font-bold mb-4">Example code</h2>
+        <p class="text-gray-700 text-lg mb-8">Here is an example code snippet in Python that sends a message to the chatbot API:</p>
+        <pre class="bg-gray-100 rounded-lg px-4 py-2 mb-8 block"><code class="text-gray-800">import requests
+
+url = "https://example.com/api/chatbot"
+
+payload = {
+    "message": "Hello, chatbot!",
+    "user_id": "1234",
+    "api_key": "your_api_key"
+}
+
+response = requests.post(url, json=payload)
+
+print(response.json())</code></pre>
+    </div>
+</body>
+</html>
