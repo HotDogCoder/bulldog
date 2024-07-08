@@ -22,14 +22,15 @@ API_WHATSAPP_WEB = os.environ.get('API_WHATSAPP_WEB')
 HELP_NUMBER = os.environ.get('HELP_NUMBER')
 
 ALLOWED_HOSTS = [
+    'wwww.bulldog.acidjelly.com',
+    'bulldog.acidjelly.com',
+    '146.190.222.68',
+    '10.0.10.180',
     '127.0.0.1',
     'localhost'
 ]
 
-CORS_ORIGIN_WHITELIST = []
-
-CORS_ALLOW_CREDENTIALS = True
-
+CORS_ORIGIN_ALLOW_ALL = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:8000",
@@ -52,7 +53,7 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
-    'apps.monitor',
+    'apps.peru',
 ]
 
 THIRD_PARTY_APPS = [
@@ -126,7 +127,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('DB_AUTH_NAME'),
         'USER': os.environ.get('DB_AUTH_USER'),
         'PASSWORD': os.environ.get('DB_AUTH_PASSWORD'),
@@ -134,31 +135,20 @@ DATABASES = {
         'PORT': os.environ.get('DB_AUTH_PORT'),
         'DISABLE_SSL': True
     },
-    'monitor_db': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_MONITOR_NAME'),
-        'USER': os.environ.get('DB_MONITOR_USER'),
-        'PASSWORD': os.environ.get('DB_MONITOR_PASSWORD'),
-        'HOST': os.environ.get('DB_MONITOR_HOST'),
-        'PORT': os.environ.get('DB_MONITOR_PORT'),
-        'DISABLE_SSL': True
-    },
-    'guias_db': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_GUIAS_NAME'),
-        'USER': os.environ.get('DB_GUIAS_USER'),
-        'PASSWORD': os.environ.get('DB_GUIAS_PASSWORD'),
-        'HOST': os.environ.get('DB_GUIAS_HOST'),
-        'PORT': os.environ.get('DB_GUIAS_PORT'),
-        'DISABLE_SSL': True
-    },
+    # 'guias_db': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': os.environ.get('DB_GUIAS_NAME'),
+    #     'USER': os.environ.get('DB_GUIAS_USER'),
+    #     'PASSWORD': os.environ.get('DB_GUIAS_PASSWORD'),
+    #     'HOST': os.environ.get('DB_GUIAS_HOST'),
+    #     'PORT': os.environ.get('DB_GUIAS_PORT'),
+    #     'DISABLE_SSL': True
+    # },
 }
 
 DATABASES['default']["ATOMIC_REQUEST"] = True
 
-DATABASE_ROUTERS = [
-    'apps.monitor.router.MonitorRouter',
-]
+DATABASE_ROUTERS = []
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
