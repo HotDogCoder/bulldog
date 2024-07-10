@@ -127,7 +127,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('DB_AUTH_NAME'),
         'USER': os.environ.get('DB_AUTH_USER'),
         'PASSWORD': os.environ.get('DB_AUTH_PASSWORD'),
