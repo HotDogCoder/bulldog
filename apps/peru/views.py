@@ -20,6 +20,7 @@ class SunatTokenView(APIView):
         sunat_model.ruc = request_data.get('ruc', '')
         sunat_model.user = request_data.get('user', '')
         sunat_model.password = request_data.get('password', '')
+        sunat_model.delay = request_data.get('delay', 10)
 
         SC = SunatController()
         response = SC.get_token(sunat_model)

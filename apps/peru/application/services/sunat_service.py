@@ -47,10 +47,10 @@ class SunatService(SunatServiceInterface):
                 chrome_options.add_argument('--ignore-certificate-errors')
                 
                 chrome_service = Service(sunat_model.chrome_driver_path)
-                # driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
+                driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
                 # display = Display(visible=0, size=(1920, 1080))
                 # display.start()
-                driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+                # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
             elif sunat_model.driver == 'Firefox':
                 driver = webdriver.Firefox(
