@@ -7,6 +7,7 @@ class SunatModel:
         self.user = ''
         self.password = ''
         self.sunat_token = ''
+        self.delay = 10
         pass
 
 

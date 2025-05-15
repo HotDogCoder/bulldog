@@ -96,7 +96,7 @@ class SunatHelper:
         btn_submit = self.driver.find_element(By.ID, "btnAceptar")
         btn_submit.click()
 
-        sleep(5)
+        sleep(self.sunat_model.delay)
         # self.driver.save_screenshot('screenshot.png')
         # divOpcionServicio2
         option_btn = Wait(self.driver, timeout=30).until(
