@@ -34,11 +34,25 @@ class CallaoTokenView(APIView):
         request_data = self.request.data
 
         mtc_model = MtcModel()
-        mtc_model.ruc = request_data.get('ruc', '')
-        mtc_model.user = request_data.get('user', '')
-        mtc_model.password = request_data.get('password', '')
+        mtc_model.registration_number = request_data.get('registration_number', '')
 
         MC = MtcController()
         response = MC.get_callao_car_tickets(mtc_model)
+        json_data = json.dumps(vars(response))
+        return HttpResponse(json_data, content_type='application/json')
+    
+class LimaTokenView(APIView):
+    ## permission_classes = [HasAPIKey]
+
+    def post(self, request):
+
+        request_data = self.request.data
+
+        mtc_model = MtcModel()
+        mtc_model.registration_number = request_data.get('registration_number', '')
+        mtc_model.site_key = request_data.get('site_key', '')
+
+        MC = MtcController()
+        response = MC.get_lima_car_tickets(mtc_model)
         json_data = json.dumps(vars(response))
         return HttpResponse(json_data, content_type='application/json')

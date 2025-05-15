@@ -7,3 +7,5 @@ class MtcRepository(MtcRepositoryInterface):
 
     def get_callao_car_tickets(self, mtc_model: MtcModel):
         return mtc_model
+    def get_lima_car_tickets(self, mtc_model: MtcModel):
+        return mtc_model

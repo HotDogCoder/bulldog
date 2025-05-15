@@ -5,6 +5,8 @@ class MtcModel:
         self.url = ""
         self.driver = None
         self.chrome_driver_path = ""
+        self.captcha_text = ""
+        self.site_key = ""
 
         self.ruc = ""
         self.ruc_type = ""

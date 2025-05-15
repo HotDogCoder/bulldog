@@ -9,3 +9,6 @@ class MtcRepositoryInterface(ABC):
     @abstractmethod
     def get_callao_car_tickets(self, mtc_model: MtcModel):
         return mtc_model
+    @abstractmethod
+    def get_lima_car_tickets(self, mtc_model: MtcModel):
+        return mtc_model
