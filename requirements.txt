@@ -37,4 +37,4 @@ whitenoise==6.2.0
 selenium~=4.7.2
 webdriver-manager
 pytz==2023.3
-pyvirtualdisplay
+2captcha-python
