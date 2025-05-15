@@ -28,7 +28,7 @@ class SunatTokenView(APIView):
         return HttpResponse(json_data, content_type='application/json')
     
 class CallaoTokenView(APIView):
-    ## permission_classes = [HasAPIKey]
+    permission_classes = [HasAPIKey]
 
     def post(self, request):
 
@@ -43,7 +43,7 @@ class CallaoTokenView(APIView):
         return HttpResponse(json_data, content_type='application/json')
     
 class LimaTokenView(APIView):
-    ## permission_classes = [HasAPIKey]
+    permission_classes = [HasAPIKey]
 
     def post(self, request):
 
