@@ -112,6 +112,7 @@ class MtcHelper:
 
         # solve captcha using data-sitekey 
         solver = TwoCaptcha('f37d1c71dd4c02bb257a19698fb329b1')
+        captcha_text = ''
         
         try:
             result = solver.recaptcha(
@@ -131,19 +132,28 @@ class MtcHelper:
             exit()
 
         # execute script to set the value of g-recaptcha-response
+        print("Setting CAPTCHA response in the page...")
         self.driver.execute_script(
             "document.getElementById('g-recaptcha-response').innerHTML = arguments[0];", 
             captcha_text
         )
+        # wait for the input to be present
+        print("Waiting for the search button to be clickable...")
 
         # input type submit value 'Buscar'
         search_button = self.driver.find_element(By.XPATH, "//input[@type='submit' and @value='Buscar']")
         search_button.click()
 
         # wait for the table to be present
-        table = Wait(self.driver, 10).until(
-            ec.presence_of_element_located((By.TAG_NAME, 'table'))
-        )
+        try:
+            table = Wait(self.driver, 5).until(
+                ec.presence_of_element_located((By.TAG_NAME, 'table'))
+            )
+        except Exception as e:
+            print("Error finding the table")
+            self.driver.quit()
+            exit()
+            return
 
         # get the tbody
         tbody = table.find_element(By.TAG_NAME, 'tbody')

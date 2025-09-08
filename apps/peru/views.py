@@ -43,7 +43,6 @@ class CallaoTokenView(APIView):
         return HttpResponse(json_data, content_type='application/json')
     
 class LimaTokenView(APIView):
-    permission_classes = [HasAPIKey]
 
     def post(self, request):
 
