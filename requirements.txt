@@ -24,6 +24,7 @@ tzdata==2023.3
 urllib3
 
 django-storages==1.12.3
+python-dateutil
 
 mysqlclient
 # psycopg2-binary
@@ -38,3 +39,9 @@ selenium~=4.7.2
 webdriver-manager
 pytz==2023.3
 2captcha-python
+
+pandas
+pyexcel
+xlrd
+pyexcel-xls
+openpyxl
