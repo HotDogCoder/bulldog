@@ -10,7 +10,7 @@ from apps.peru.presentation.controllers.mtc_controller import MtcController
 from apps.peru.presentation.controllers.sunat_controller import SunatController
 
 class SunatTokenView(APIView):
-    permission_classes = [HasAPIKey]
+    # permission_classes = [HasAPIKey]
 
     def post(self, request):
 
@@ -28,7 +28,7 @@ class SunatTokenView(APIView):
         return HttpResponse(json_data, content_type='application/json')
     
 class CallaoTokenView(APIView):
-    permission_classes = [HasAPIKey]
+    # permission_classes = [HasAPIKey]
 
     def post(self, request):
 
