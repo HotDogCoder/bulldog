@@ -58,6 +58,6 @@ def combine_files(input_folder, output_file):
         print("❌ No valid files found.")
 
 if __name__ == "__main__":
-    input_folder = "/Users/ditsy/Django/bulldog/downloads/excel_files_zera_2"  # change this
+    input_folder = "/Users/ditsy/Django/bulldog/downloads"  # change this
     output_file = "combined.csv"
     combine_files(input_folder, output_file)

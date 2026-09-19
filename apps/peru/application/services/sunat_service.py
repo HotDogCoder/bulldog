@@ -8,7 +8,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from pyvirtualdisplay import Display
 import os
 from datetime import datetime
 
@@ -41,7 +40,7 @@ class SunatService(SunatServiceInterface):
                 chrome_options.add_argument("--proxy-bypass-list=*")
                 chrome_options.add_argument("--start-maximized")
                 # chrome_options.add_argument('--headless')
-                chrome_options.add_argument('--disable-gpu')
+                # chrome_options.add_argument('--disable-gpu')
                 chrome_options.add_argument('--disable-dev-shm-usage')
                 chrome_options.add_argument('--no-sandbox')
                 chrome_options.add_argument('--ignore-certificate-errors')

@@ -63,6 +63,6 @@ def combine_excel_files(input_folder, output_file):
 
 
 if __name__ == "__main__":
-    input_folder = "/Users/ditsy/Django/bulldog/downloads/excel_files_zera_2"   # 📂 Cambia esta ruta
+    input_folder = "/Users/ditsy/Django/bulldog/downloads"   # 📂 Cambia esta ruta
     output_file = "combined.xls"           # 📄 Salida en formato XLS
     combine_excel_files(input_folder, output_file)
